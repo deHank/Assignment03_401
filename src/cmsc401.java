@@ -110,7 +110,7 @@ public class cmsc401 {
             //for each edge adjacent to this one
             for (int v = 0; v < list.length; v++) {
                 //if not visited, and vertice is adjacent, and it is less than the shortest path, update new shortest path
-                if (!visited[v] && list[u][v] != 0 && shortestDist[u] != Integer.MAX_VALUE && shortestDist[u] + list[u][v] < shortestDist[v]) {
+                if (list[u][v]!= Integer.MAX_VALUE) {
                     //relaxing the value
                     if (v == 1) {
                         //System.out.println("V IS EQUAL TO +" + v + " AND u IS EQUAL TO " + u);
@@ -155,6 +155,7 @@ public class cmsc401 {
                 min_index = i;
             }
         }
+        aVisited[min_index]=false;
         return min_index;
     }
 
